@@ -1,11 +1,14 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 p-0">
-        <div class="card p-2 border-0" style="width: 18rem;">
+      <div class="col-md-12 p-0">
+        <div class="card p-2 border-0 mx-auto my-5" style="width: 18rem;">
           <img :src="selectedImg.src.large" class="card-img-top" alt width="700" height="300" />
           <div class="card-body">
-            <p class="card-text font-weight-bold">{{selectedImg.photographer}}</p>
+            <p class="card-text">
+              <strong>Author:</strong>
+              {{selectedImg.photographer}}
+            </p>
             <a
               :href="selectedImg.src.original"
               download="image.png"
@@ -32,7 +35,6 @@ export default {
       // alert(imgId);
       let results = JSON.parse(localStorage.getItem("Results"));
       let image = results.photos.filter(img => img.id == imgId);
-      alert(JSON.stringify(image));
       // alert(JSON.stringify(results.photos));
       this.selectedImg = image[0];
     }

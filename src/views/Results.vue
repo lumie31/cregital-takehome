@@ -1,11 +1,14 @@
 <template>
   <div class="about">
-    <h1>This is the results page</h1>
+    <br />
+    <!-- <h1>Search results for {{ query }}</h1> -->
+    <h1 class="font-weight-bold">Here's your search results</h1>
     <div class="container">
       <div class="d-flex justify-content-between">
         <button @click.prevent="getPrev" class="btn btn-info" v-if="isMultiplePage">Prev</button>
         <button @click.prevent="getNext" class="btn btn-info">Next</button>
       </div>
+      <br />
       <div class="row">
         <div
           class="col-md-3 p-0"
@@ -39,7 +42,8 @@ export default {
       searchResults: [],
       isMultiplePage: false,
       nextUrl: "",
-      prevUrl: ""
+      prevUrl: "",
+      query: ""
     };
   },
   methods: {
@@ -94,6 +98,7 @@ export default {
     }
   },
   mounted() {
+    //this.query = this.$route.params.query;
     this.getData();
   }
 };

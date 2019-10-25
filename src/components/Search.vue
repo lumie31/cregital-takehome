@@ -1,9 +1,24 @@
 <template>
-  <div class="hello h-100 d-flex align-items-center mx-5">
-    <form class="input-group">
-      <input v-model="searchInput" type="text" placeholder="Search..." class="form-control" /> &nbsp;
-      <button type="submit" @click.prevent="search" class="btn btn-primary">Search</button>
-    </form>
+  <div class="hello">
+    <h1 class="font-weight-bold">Search for anything!</h1>
+    <br />
+    <div class="h-100 d-flex justify-content-center">
+      <form class="input-group flex-column" style="width: 50%">
+        <input
+          v-model="searchInput"
+          type="text"
+          placeholder="Search for something (e.g cat...)"
+          class="form-control w-100"
+          style="border-radius: 50px"
+        />
+        <br />
+        <button
+          type="submit"
+          @click.prevent="search(searchInput)"
+          class="btn btn-primary mx-auto"
+        >Search</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -20,7 +35,6 @@ export default {
   },
   methods: {
     search() {
-      alert(this.searchInput);
       if (!this.searchInput) {
         return;
       } else {
@@ -47,7 +61,10 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+#app {
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
 h3 {
   margin: 40px 0 0;
 }

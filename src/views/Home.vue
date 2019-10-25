@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container box">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <AppSearch />
   </div>
@@ -18,6 +18,8 @@ export default {
 </script>
 
 <style>
-.container {
+.box {
+  padding-top: 20vh;
 }
+/* */
 </style>
